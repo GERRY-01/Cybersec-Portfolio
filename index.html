@@ -204,6 +204,109 @@
 </section>
 
 
+<!-- LAB CHALLENGES SECTION -->
+<section id="lab-challenges" class="labs section">
+  <div class="container">
+    <h2 class="section-title reveal">Lab Challenges</h2>
+    <p class="section-intro reveal">
+      Below are some of the PortSwigger Academy labs I have successfully completed. 
+      Each challenge demonstrates my ability to identify, exploit, and mitigate web vulnerabilities using tools like <strong>Burp Suite</strong>.
+    </p>
+
+    <div class="labs-grid">
+
+      <!-- Lab 1: Username Enumeration via Different Responses -->
+      <article class="lab-card reveal">
+        <div class="lab-header">
+          <h3>Username Enumeration via Different Responses</h3>
+          <span class="lab-tool">Tool: Burp Suite</span>
+        </div>
+
+        <p class="lab-desc">
+          This lab involved exploiting inconsistencies in server responses during login attempts to identify valid usernames.
+        </p>
+
+        <div class="lab-image">
+          <img src="diff_responses.png" alt="Username Enumeration via Different Responses">
+        </div>
+
+        <ul class="lab-meta">
+          <li><strong>Problem Statement:</strong> Detect valid usernames based on variations in server error messages.</li>
+          <li><strong>Approach:</strong> Used Burp Suite Intruder to automate login attempts and compared responses to identify valid users.</li>
+          <li><strong>Key Lessons:</strong> Consistent server-side error messages are critical to prevent username enumeration vulnerabilities.</li>
+        </ul>
+      </article>
+
+      <!-- Lab 2: Username Enumeration via Response Timing -->
+      <article class="lab-card reveal">
+        <div class="lab-header">
+          <h3>Username Enumeration via Response Timing</h3>
+          <span class="lab-tool">Tool: Burp Suite</span>
+        </div>
+
+        <p class="lab-desc">
+          This challenge demonstrated how response delays can reveal valid usernames when authentication mechanisms behave differently.
+        </p>
+
+        <div class="lab-image">
+          <img src="response_timing.png" alt="Username Enumeration via Response Timing">
+        </div>
+
+        <ul class="lab-meta">
+          <li><strong>Problem Statement:</strong> Identify valid usernames by analyzing response time variations.</li>
+          <li><strong>Approach:</strong> Used Burp Suite Repeater to test multiple requests and measured response delays for valid accounts.</li>
+          <li><strong>Key Lessons:</strong> Authentication endpoints must respond uniformly to avoid timing-based enumeration vulnerabilities.</li>
+        </ul>
+      </article>
+
+      <!-- Lab 3: SQL Injection — WHERE Clause -->
+      <article class="lab-card reveal">
+        <div class="lab-header">
+          <h3>SQL Injection in WHERE Clause Allowing Retrieval of Hidden Data</h3>
+          <span class="lab-tool">Tool: Burp Suite</span>
+        </div>
+
+        <p class="lab-desc">
+          This lab involved exploiting an SQL injection flaw in the WHERE clause to retrieve hidden data that wasn’t intended to be displayed.
+        </p>
+
+        <div class="lab-image">
+          <img src="diff_responses.png" alt="SQL Injection Vulnerability in WHERE Clause">
+        </div>
+
+        <ul class="lab-meta">
+          <li><strong>Problem Statement:</strong> Exploit an SQL injection flaw to retrieve hidden data from the database.</li>
+          <li><strong>Approach:</strong> Intercepted requests using Burp Suite, tested payloads in parameters, and extracted hidden records through union-based injection.</li>
+          <li><strong>Key Lessons:</strong> Use parameterized queries and proper input validation to mitigate SQL injection vulnerabilities.</li>
+        </ul>
+      </article>
+
+      <!-- Lab 4: SQL Injection — Login Bypass -->
+      <article class="lab-card reveal">
+        <div class="lab-header">
+          <h3>SQL Injection Vulnerability Allowing Login Bypass</h3>
+          <span class="lab-tool">Tool: Burp Suite</span>
+        </div>
+
+        <p class="lab-desc">
+          In this challenge, I exploited a classic SQL injection vulnerability in the login form to bypass authentication and access restricted areas.
+        </p>
+
+        <div class="lab-image">
+          <img src="login_bypass.png" alt="SQL Injection Vulnerability Allowing Login Bypass">
+        </div>
+
+        <ul class="lab-meta">
+          <li><strong>Problem Statement:</strong> Gain unauthorized access through SQL injection in the authentication process.</li>
+          <li><strong>Approach:</strong> Manipulated the SQL query logic using payloads such as <code>' OR '1'='1 --</code> to bypass authentication.</li>
+          <li><strong>Key Lessons:</strong> Always sanitize user inputs and enforce prepared statements to prevent authentication bypasses.</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 
     <!-- Footer -->
     <footer>
