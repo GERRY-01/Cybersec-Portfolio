@@ -119,3 +119,18 @@ document.addEventListener('click', (e) => {
    project cards already use the .reveal class and will animate correctly.
    The observer handles adding .from-right/.from-left and .revealed.
 */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const contactCards = document.querySelectorAll(".contact-card");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("revealed");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  contactCards.forEach(card => observer.observe(card));
+});
