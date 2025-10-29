@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -784,7 +785,7 @@ footer {
   .section-intro { font-size: 0.95rem; }
   .resume-content i { font-size: 2rem; }
   .download-btn { font-size: 0.9rem; padding: 8px 16px; }
-  .resume-content{
-    margin-left: 70px;
+  .resume-section{
+    margin-left: 25%;
   }
 }
