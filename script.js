@@ -86,3 +86,36 @@ function toggleMenu() {
 
   skillCards.forEach(card => observer.observe(card));
 })();
+
+
+/* ===== Projects modal open/close ===== */
+document.addEventListener('click', (e) => {
+  // open modal buttons: data-open attribute contains the modal id to show
+  const open = e.target.closest('[data-open]');
+  if (open) {
+    const id = open.getAttribute('data-open');
+    const modal = document.getElementById(id);
+    if (modal) modal.setAttribute('aria-hidden', 'false');
+    return;
+  }
+
+  // close modal controls
+  const closeBtn = e.target.closest('[data-close]');
+  if (closeBtn) {
+    // find parent modal backdrop
+    const parent = closeBtn.closest('.modal-backdrop');
+    if (parent) parent.setAttribute('aria-hidden', 'true');
+    return;
+  }
+
+  // close by clicking backdrop (but not when clicking inside modal)
+  if (e.target.classList && e.target.classList.contains('modal-backdrop')) {
+    e.target.setAttribute('aria-hidden', 'true');
+  }
+});
+
+/* ===== keep using your scroll-direction-aware reveal logic =====
+   If you already have the reveal observer script in script.js (from About/Skills),
+   project cards already use the .reveal class and will animate correctly.
+   The observer handles adding .from-right/.from-left and .revealed.
+*/
